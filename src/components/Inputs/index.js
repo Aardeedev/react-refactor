@@ -11,31 +11,10 @@ class Inputs extends React.Component {
     };
   }
 
-  handleUsernameChange = event => {
-    const { value } = event.target;
+  handleChange = event => {
+    const { value, name } = event.target;
     this.setState(() => ({
-      username: value
-    }));
-  };
-
-  handleEmailChange = event => {
-    const { value } = event.target;
-    this.setState(() => ({
-      email: value
-    }));
-  };
-
-  handlePasswordChange = event => {
-    const { value } = event.target;
-    this.setState(() => ({
-      password: value
-    }));
-  };
-
-  handleConfirmPasswordChange = event => {
-    const { value } = event.target;
-    this.setState(() => ({
-      confirmPassword: value
+      [name]: value
     }));
   };
 
@@ -46,29 +25,29 @@ class Inputs extends React.Component {
           name="username"
           placeholder="username"
           value={this.state.username}
-          onChange={this.handleUsernameChange}
+          onChange={this.handleChange}
           type="text"
         />
         <input
           name="email"
           placeholder="email"
           value={this.state.email}
-          onChange={this.handleEmailChange}
-          type="text"
+          onChange={this.handleChange}
+          type="email"
         />
         <input
           name="password"
           placeholder="password"
           value={this.state.password}
-          onChange={this.handlePasswordChange}
-          type="text"
+          onChange={this.handleChange}
+          type="password"
         />
         <input
           name="confirmPassword"
           placeholder="confirmPassword"
           value={this.state.confirmPassword}
-          onChange={this.handleConfirmPasswordChange}
-          type="text"
+          onChange={this.handleChange}
+          type="password"
         />
       </form>
     );
